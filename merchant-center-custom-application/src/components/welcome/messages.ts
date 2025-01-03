@@ -27,12 +27,12 @@ export default defineMessages({
     defaultMessage:
       'Explore the UI components to develop Custom Applications and learn more about the Design System.',
   },
-  cardChannelsTitle: {
-    id: 'Welcome.cardChannelsTitle',
+  cardProductsTitle: {
+    id: 'Welcome.cardProductsTitle',
     defaultMessage: 'Fetching channels',
   },
-  cardChannelsContent: {
-    id: 'Welcome.cardChannelsContent',
+  cardProductsContent: {
+    id: 'Welcome.cardProductsContent',
     defaultMessage:
       'Demo example to fetch some data using GraphQL and displaying it in a paginated table.',
   },

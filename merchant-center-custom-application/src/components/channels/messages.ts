@@ -2,12 +2,12 @@ import { defineMessages } from 'react-intl';
 
 export default defineMessages({
   backToWelcome: {
-    id: 'Channels.backToWelcome',
+    id: 'Products.backToWelcome',
     defaultMessage: 'Back to Welcome page',
   },
   title: {
-    id: 'Channels.title',
-    defaultMessage: 'Channels list',
+    id: 'Product.title',
+    defaultMessage: 'Products list',
   },
   demoHint: {
     id: 'Channels.demoHint',

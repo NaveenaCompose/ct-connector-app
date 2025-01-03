@@ -12530,3 +12530,44 @@ export type TUpdateChannelDetailsMutation = {
     }> | null;
   } | null;
 };
+export type TFetchProductsQuery = {
+  __typename?: 'Query';
+  products: {
+    __typename?: 'ProductQueryResult';
+    total: number;
+    count: number;
+    offset: number;
+    results: Array<{
+      __typename?: 'Product';
+      id: string;
+      key?: string | null;
+      createdAt: string; // DateTime as string
+      lastModifiedAt: string; // DateTime as string
+      skus: Array<string>;
+      priceMode?: TPriceMode | null;
+      version: number;
+      masterData: {
+        current: {
+          masterVariant: {
+            prices: Array<{
+              value: {
+                currencyCode: string;
+                centAmount: number;
+              };
+            }>;
+          };
+        };
+      };
+    }>;
+  };
+};
+
+export type TFetchProductsQueryVariables = Exact<{
+  limit: Scalars['Int']; // Number of items to fetch
+  offset: Scalars['Int']; // Starting point for the fetch
+  sort?: InputMaybe<Array<Scalars['String']> | Scalars['String']>; // Sorting criteria
+}>;
+export type TFetchProductDetailsQueryVariables = Exact<{
+  productId: Scalars['String'];
+}>;
+

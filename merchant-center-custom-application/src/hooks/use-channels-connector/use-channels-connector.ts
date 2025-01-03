@@ -10,7 +10,7 @@ import { GRAPHQL_TARGETS } from '@commercetools-frontend/constants';
 import { createSyncChannels } from '@commercetools/sync-actions';
 import type { TDataTableSortingState } from '@commercetools-uikit/hooks';
 import type {
-  TFetchChannelsQuery,
+  TFetchProductsQuery,
   TFetchChannelsQueryVariables,
   TFetchChannelDetailsQuery,
   TFetchChannelDetailsQueryVariables,
@@ -22,7 +22,7 @@ import {
   extractErrorFromGraphQlResponse,
   convertToActionData,
 } from '../../helpers';
-import FetchChannelsQuery from './fetch-channels.ctp.graphql';
+import FetchProducts from './fetch-channels.ctp.graphql';
 import FetchChannelDetailsQuery from './fetch-channel-details.ctp.graphql';
 import UpdateChannelDetailsMutation from './update-channel-details.ctp.graphql';
 
@@ -36,7 +36,7 @@ type PaginationAndSortingProps = {
 type TUseChannelsFetcher = (
   paginationAndSortingProps: PaginationAndSortingProps
 ) => {
-  channelsPaginatedResult?: TFetchChannelsQuery['channels'];
+  channelsPaginatedResult?: TFetchProductsQuery['products'];
   error?: ApolloError;
   loading: boolean;
 };
@@ -47,9 +47,9 @@ export const useChannelsFetcher: TUseChannelsFetcher = ({
   tableSorting,
 }) => {
   const { data, error, loading } = useMcQuery<
-    TFetchChannelsQuery,
+  TFetchProductsQuery,
     TFetchChannelsQueryVariables
-  >(FetchChannelsQuery, {
+  >(FetchProducts, {
     variables: {
       limit: perPage.value,
       offset: (page.value - 1) * perPage.value,
@@ -61,7 +61,7 @@ export const useChannelsFetcher: TUseChannelsFetcher = ({
   });
 
   return {
-    channelsPaginatedResult: data?.channels,
+    channelsPaginatedResult: data?.products,
     error,
     loading,
   };

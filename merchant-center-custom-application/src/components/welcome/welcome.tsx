@@ -103,8 +103,8 @@ const Welcome = () => {
               isExternal
             />
             <InfoCard
-              title={intl.formatMessage(messages.cardChannelsTitle)}
-              content={intl.formatMessage(messages.cardChannelsContent)}
+              title={intl.formatMessage(messages.cardProductsTitle)}
+              content={intl.formatMessage(messages.cardProductsContent)}
               linkTo={`${match.url}/channels`}
             />
           </Grid>

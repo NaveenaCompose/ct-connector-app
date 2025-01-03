@@ -1,15 +1,27 @@
-query FetchChannels($limit: Int!, $offset: Int!, $sort: [String!]) {
-  channels(limit: $limit, offset: $offset, sort: $sort) {
+query FetchProducts($limit: Int!, $offset: Int!, $sort: [String!]) {
+  products(limit: $limit, offset: $offset, sort: $sort) {
     total
     count
     offset
     results {
       id
       key
-      roles
-      nameAllLocales {
-        locale
-        value
+      createdAt
+      lastModifiedAt
+      skus
+      priceMode
+      version
+      masterData {
+        current {
+          masterVariant {
+            prices {
+              value {
+                currencyCode
+                centAmount
+              }
+            }
+          }
+        }
       }
     }
   }
